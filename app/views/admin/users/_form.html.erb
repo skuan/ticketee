@@ -1,4 +1,5 @@
 <%= form_for [:admin, @user] do |f| %>
+
   <% if @user.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@user.errors.count, "error") %> prohibited
@@ -18,5 +19,10 @@
     <%= f.label :password %>
     <%= f.password_field :password %>
   </p>
+  <p>
+    <%= f.check_box :admin %>
+    <%= f.label :admin, "Is an admin?" %>
+  </p>
   <%= f.submit %>
+
 <% end %>
